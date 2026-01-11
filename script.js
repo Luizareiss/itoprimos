@@ -1,6 +1,49 @@
 let jogadores = [];
 let numeros = {};
 
+const temas = [
+  "Pessoas famosas que você gostaria de ser",
+  "Coisas que dão medo",
+  "Coisas que você gostaria de fotografar",
+  "Esportes mais conhecidos",
+  "Itens do dia a dia que poderiam ser boas armas",
+  "Poderes especiais que você gostaria de ter",
+  "Desculpas para faltar no trabalho",
+  "Sabores de sorvete",
+  "Pessoas que sobreviveriam a um ataque zumbi",
+  "Coisas que você gostaria de fazer ao aposentar",
+  "Pessoas que você sairia no soco",
+  "Coisas que desejava quando era criança",
+  "Melhores temas de aniversário",
+  "Tipos de rolê",
+  "Motivo para pedir divórcio",
+  "Pense como um aluno do ensino médio: o que é legal?",
+  "Presente de aniversário",
+  "Melhor destino para passar a lua de mel",
+  "Coisas fofinhas",
+  "Pessoas que ganhariam o BBB",
+  "Frases estranhas ditas por uma criança de 5 anos",
+  "Algo que você gostaria de achar enterrado em um parque",
+  "Melhores bebidas alcoólicas",
+  "Itens úteis para quando estiver perdido no deserto",
+  "Evento que você visitaria se tivesse uma máquina do tempo",
+  "Coisas que te surpreenderiam se saísse do seu corpo",
+  "Coisas que te surpreenderiam se fossem ditas por um professor",
+  "Melhores comidas salgadas",
+  "Lugares para 1° date",
+  "Melhores comidas doces",
+  "Respostas para a pergunta: pai/mãe, de onde vem os bebês?",
+  "Melhores filmes de animação",
+  "Ações que exigem coragem",
+  "Piores lugares para terminar um namoro",
+  "Um único prato para comer no seu último dia de vida",
+  "Última coisa para fazer no seu último dia de vida",
+  "Personagens fictícios que dão raiva",
+  "Frases para se dizer em uma entrevista de emprego",
+  "Emprego dos sonhos",
+  "Rolês de BH"
+];
+
 function atualizarLista() {
   const lista = document.getElementById("listaJogadores");
   lista.innerHTML = "";
@@ -70,6 +113,11 @@ function revelarNumero() {
   }, 3000);
 }
 
+function sortearTema() {
+  const tema = temas[Math.floor(Math.random() * temas.length)];
+  document.getElementById("temaSorteado").innerText = tema;
+}
+
 function verRanking() {
   const ranking = document.getElementById("ranking");
   ranking.innerHTML = "";
@@ -80,7 +128,7 @@ function verRanking() {
   }
 
   const ordenado = Object.entries(numeros)
-    .sort((a, b) => b[1] - a[1]); // 👈 MAIOR → MENOR
+    .sort((a, b) => b[1] - a[1]);
 
   ordenado.forEach(([nome, numero], index) => {
     const li = document.createElement("li");
@@ -94,6 +142,7 @@ function zerarTudo() {
   numeros = {};
   atualizarLista();
   document.getElementById("ranking").innerHTML = "";
+  document.getElementById("temaSorteado").innerText = "";
   document.getElementById("status").innerText = "";
   document.getElementById("resultado").innerText = "";
   alert("Tudo zerado!");
