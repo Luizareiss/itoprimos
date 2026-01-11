@@ -70,10 +70,30 @@ function revelarNumero() {
   }, 3000);
 }
 
+function verRanking() {
+  const ranking = document.getElementById("ranking");
+  ranking.innerHTML = "";
+
+  if (Object.keys(numeros).length === 0) {
+    alert("Faça o sorteio antes de ver o ranking");
+    return;
+  }
+
+  const ordenado = Object.entries(numeros)
+    .sort((a, b) => a[1] - b[1]);
+
+  ordenado.forEach(([nome, numero], index) => {
+    const li = document.createElement("li");
+    li.innerText = `${index + 1}º — ${nome}: ${numero}`;
+    ranking.appendChild(li);
+  });
+}
+
 function zerarTudo() {
   jogadores = [];
   numeros = {};
   atualizarLista();
+  document.getElementById("ranking").innerHTML = "";
   document.getElementById("status").innerText = "";
   document.getElementById("resultado").innerText = "";
   alert("Tudo zerado!");
