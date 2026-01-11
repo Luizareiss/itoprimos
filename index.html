@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>ITO Primos</title>
+  <title>Sorteador Secreto</title>
 
   <!-- Fonte Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,7 +17,7 @@
 
   <div class="container">
 
-    <h1>ITO Primos</h1>
+    <h1>Sorteador Secreto</h1>
 
     <section>
       <h2>Novo jogador</h2>
@@ -41,6 +41,12 @@
       <input type="text" id="nomeRevelar" placeholder="Digite seu nome">
       <button onclick="revelarNumero()">Revelar</button>
       <p id="resultado"></p>
+    </section>
+
+    <section>
+      <h2>Tema da rodada</h2>
+      <button class="tema" onclick="sortearTema()">Sugestão de tema</button>
+      <p id="temaSorteado"></p>
     </section>
 
     <section>
