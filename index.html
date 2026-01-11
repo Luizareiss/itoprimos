@@ -21,41 +21,30 @@
 
     <section>
       <h2>Novo jogador</h2>
-      <input 
-        type="text" 
-        id="novoJogador" 
-        placeholder="Nome do jogador"
-      >
-      <button onclick="adicionarJogador()">
-        Adicionar jogador
-      </button>
+      <input type="text" id="novoJogador" placeholder="Nome do jogador">
+      <button onclick="adicionarJogador()">Adicionar jogador</button>
+    </section>
+
+    <section>
+      <h2>Jogadores</h2>
+      <ul id="listaJogadores"></ul>
     </section>
 
     <section>
       <h2>Sorteio</h2>
-      <button onclick="sortearNumeros()">
-        Sortear números
-      </button>
+      <button onclick="sortearNumeros()">Sortear números</button>
       <p id="status"></p>
     </section>
 
     <section>
       <h2>Revelar número</h2>
-      <input 
-        type="text" 
-        id="nomeRevelar" 
-        placeholder="Digite seu nome"
-      >
-      <button onclick="revelarNumero()">
-        Revelar
-      </button>
+      <input type="text" id="nomeRevelar" placeholder="Digite seu nome">
+      <button onclick="revelarNumero()">Revelar</button>
       <p id="resultado"></p>
     </section>
 
     <section>
-      <button class="zerar" onclick="zerarTudo()">
-        Zerar tudo
-      </button>
+      <button class="zerar" onclick="zerarTudo()">Zerar tudo</button>
     </section>
 
   </div>
