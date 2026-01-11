@@ -1,6 +1,17 @@
 let jogadores = [];
 let numeros = {};
 
+function atualizarLista() {
+  const lista = document.getElementById("listaJogadores");
+  lista.innerHTML = "";
+
+  jogadores.forEach(nome => {
+    const li = document.createElement("li");
+    li.innerText = nome;
+    lista.appendChild(li);
+  });
+}
+
 function adicionarJogador() {
   const input = document.getElementById("novoJogador");
   const nome = input.value.trim();
@@ -17,6 +28,7 @@ function adicionarJogador() {
 
   jogadores.push(nome);
   input.value = "";
+  atualizarLista();
 }
 
 function sortearNumeros() {
@@ -61,6 +73,7 @@ function revelarNumero() {
 function zerarTudo() {
   jogadores = [];
   numeros = {};
+  atualizarLista();
   document.getElementById("status").innerText = "";
   document.getElementById("resultado").innerText = "";
   alert("Tudo zerado!");
