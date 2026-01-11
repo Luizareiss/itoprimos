@@ -117,3 +117,19 @@ li {
   margin-bottom: 6px;
   font-size: 13px;
 }
+
+.tema {
+  background-color: #ada7c9;
+}
+
+.tema:hover {
+  background-color: #c5d8e7;
+}
+
+#temaSorteado {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
