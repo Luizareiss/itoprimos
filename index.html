@@ -1,136 +1,67 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Sorteio</title>
+  <meta charset="UTF-8">
+  <title>Sorteador Secreto</title>
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #f5f5f5;
-        text-align: center;
-        padding: 30px;
-    }
-    input, button {
-        padding: 8px;
-        font-size: 16px;
-        margin: 5px;
-    }
-    #resultado {
-        font-size: 22px;
-        font-weight: bold;
-        margin-top: 20px;
-    }
-</style>
+  <!-- Fonte Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>Sorteio de Números</h1>
+  <div class="container">
 
-<h3>Novo jogador</h3>
-<input id="novoJogador" placeholder="Nome do jogador">
-<button onclick="adicionarJogador()">Adicionar</button>
+    <h1>Sorteador Secreto</h1>
 
-<p id="lista"></p>
+    <section>
+      <h2>Novo jogador</h2>
+      <input 
+        type="text" 
+        id="novoJogador" 
+        placeholder="Nome do jogador"
+      >
+      <button onclick="adicionarJogador()">
+        Adicionar jogador
+      </button>
+    </section>
 
-<hr>
+    <section>
+      <h2>Sorteio</h2>
+      <button onclick="sortearNumeros()">
+        Sortear números
+      </button>
+      <p id="status"></p>
+    </section>
 
-<button onclick="sortear()">🎲 Sortear números</button>
+    <section>
+      <h2>Revelar número</h2>
+      <input 
+        type="text" 
+        id="nomeRevelar" 
+        placeholder="Digite seu nome"
+      >
+      <button onclick="revelarNumero()">
+        Revelar
+      </button>
+      <p id="resultado"></p>
+    </section>
 
-<hr>
+    <section>
+      <button class="zerar" onclick="zerarTudo()">
+        Zerar tudo
+      </button>
+    </section>
 
-<h3>Revelar número</h3>
-<input id="nomeBusca" placeholder="Digite seu nome">
-<button onclick="revelarNumero()">Revelar</button>
+  </div>
 
-<p id="resultado"></p>
-
-<hr>
-
-<button onclick="zerarTudo()">🗑 Zerar tudo</button>
-
-<script>
-/* ===== DADOS ===== */
-let jogadores = [];
-let numerosSorteados = {};
-
-/* ===== FUNÇÕES ===== */
-
-// Atualiza lista na tela
-function atualizarLista() {
-    document.getElementById("lista").innerText =
-        jogadores.length ? "Jogadores: " + jogadores.join(", ") : "";
-}
-
-// Adicionar jogador
-function adicionarJogador() {
-    const nome = document.getElementById("novoJogador").value.trim().toLowerCase();
-
-    if (!nome) {
-        alert("Digite um nome.");
-        return;
-    }
-
-    if (jogadores.includes(nome)) {
-        alert("Jogador já existe.");
-        return;
-    }
-
-    jogadores.push(nome);
-    document.getElementById("novoJogador").value = "";
-    atualizarLista();
-}
-
-// Sortear números
-function sortear() {
-    if (jogadores.length === 0) {
-        alert("Adicione jogadores primeiro.");
-        return;
-    }
-
-    let numeros = [];
-    for (let i = 1; i <= 100; i++) {
-        numeros.push(i);
-    }
-
-    numeros.sort(() => Math.random() - 0.5);
-    numerosSorteados = {};
-
-    jogadores.forEach((jogador, index) => {
-        numerosSorteados[jogador] = numeros[index];
-    });
-
-    alert("Números sorteados!");
-}
-
-// Revelar número por 3 segundos
-function revelarNumero() {
-    const nome = document.getElementById("nomeBusca").value.trim().toLowerCase();
-    const resultado = document.getElementById("resultado");
-
-    if (!numerosSorteados[nome]) {
-        resultado.innerText = "Nome não encontrado ou sorteio não feito.";
-        return;
-    }
-
-    resultado.innerText = "Seu número é: " + numerosSorteados[nome];
-
-    setTimeout(() => {
-        resultado.innerText = "";
-    }, 3000);
-}
-
-// Zerar tudo
-function zerarTudo() {
-    jogadores = [];
-    numerosSorteados = {};
-    document.getElementById("lista").innerText = "";
-    document.getElementById("resultado").innerText = "";
-    document.getElementById("nomeBusca").value = "";
-    alert("Tudo zerado!");
-}
-</script>
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 
 </body>
 </html>
