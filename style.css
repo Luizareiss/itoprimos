@@ -1,135 +1,89 @@
-* {
-  box-sizing: border-box;
+body {
+  background-color: #f0e3ea;
+  font-family: 'Poppins', sans-serif;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f0e3ea;
-  min-height: 100vh;
-  margin: 0;
+.container {
+  max-width: 420px;
+  margin: 30px auto;
+  background: #f5c9e0;
   padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 30px;
-  color: #8ea8c3;
-  font-weight: 400;
-}
-
-.container {
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  width: 100%;
-  max-width: 420px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-}
-
-section {
-  margin-bottom: 25px;
+  color: #4a4a4a;
+  font-weight: 500;
 }
 
 h2 {
-  font-size: 14px;
-  margin-bottom: 10px;
-  color: #ada7c9;
-  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #4a4a4a;
+}
+
+section {
+  margin-bottom: 20px;
 }
 
 input {
   width: 100%;
-  padding: 12px;
-  border-radius: 12px;
-  border: 1px solid #d7b9d5;
-  margin-bottom: 10px;
-  font-size: 14px;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 8px;
   font-family: 'Poppins', sans-serif;
-}
-
-input:focus {
-  outline: none;
-  border-color: #8ea8c3;
 }
 
 button {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
+  border-radius: 8px;
   border: none;
-  border-radius: 12px;
   background-color: #8ea8c3;
-  color: white;
-  font-size: 14px;
-  font-weight: 400;
-  cursor: pointer;
-  transition: background 0.3s ease;
+  color: #fff;
   font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 button:hover {
-  background-color: #c5d8e7;
+  opacity: 0.85;
+}
+
+.tema {
+  background-color: #ada7c9 !important;
+  color: #fff;
+}
+
+.tema:hover {
+  background-color: #c5d8e7 !important;
 }
 
 .zerar {
   background-color: #d7b9d5;
 }
 
-.zerar:hover {
-  background-color: #f5c9e0;
-}
-
-p {
-  text-align: center;
-  color: #555;
-  font-weight: 400;
-}
-
-/* Lista de jogadores */
 ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 li {
-  background-color: #f5c9e0;
-  color: #555;
-  padding: 8px 12px;
-  border-radius: 10px;
+  background: #f0e3ea;
+  padding: 6px 10px;
+  border-radius: 6px;
   margin-bottom: 6px;
-  font-size: 13px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-li {
-  background-color: #f5c9e0;
-  color: #555;
-  padding: 8px 12px;
-  border-radius: 10px;
-  margin-bottom: 6px;
-  font-size: 13px;
-}
-
-.tema {
-  background-color: #ada7c9;
-}
-
-.tema:hover {
-  background-color: #c5d8e7;
+  font-size: 14px;
 }
 
 #temaSorteado {
   margin-top: 10px;
   text-align: center;
   font-size: 14px;
-  color: #555;
+  color: #4a4a4a;
   font-weight: 500;
 }
