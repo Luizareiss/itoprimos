@@ -102,3 +102,18 @@ li {
   margin-bottom: 6px;
   font-size: 13px;
 }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background-color: #f5c9e0;
+  color: #555;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
