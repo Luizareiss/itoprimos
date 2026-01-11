@@ -80,7 +80,7 @@ function verRanking() {
   }
 
   const ordenado = Object.entries(numeros)
-    .sort((a, b) => a[1] - b[1]);
+    .sort((a, b) => b[1] - a[1]); // 👈 MAIOR → MENOR
 
   ordenado.forEach(([nome, numero], index) => {
     const li = document.createElement("li");
